@@ -4,3 +4,16 @@
   color: red;
  
 }
+*{
+	background-color: navy;
+}
+.option{
+	color: white;
+}
+.error{
+	color: red;
+}
+.invalid-feedback{
+	text-align:left;
+	
+}

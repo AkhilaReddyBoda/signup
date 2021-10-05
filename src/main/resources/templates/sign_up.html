@@ -13,7 +13,7 @@
 <script type="text/javascript"
 	src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
-<body bgcolor="black">
+<body>
 	<div class="center">
 		<div style="color:white" align="center">
 			<h1>Signup Here</h1>
@@ -29,7 +29,9 @@
 					<label class="col-4 col-form-label"></label>
 					<div class="col-8">
 						<input type="text" th:field="*{firstName}" class="form-control"
-							required minlength="2" maxlength="20" />
+							 minlength="3" maxlength="20"  required/>
+							
+							<p th:if="${#fields.hasErrors('firstName')}" th:errors="*{fistName}">Incorrect name</p>
 					</div>
 				</div>
 				<br>
@@ -93,8 +95,8 @@
 				<div class="form-group row">
 					<label class="col-4 col-form-label"></label>
 					<div class="col-8">
-					<!--<input th:field="*{state}" class="form-control" required />-->
-					<select name="state_names" size="5">
+					<input th:field="*{state}" class="form-control" required />
+					<select style="color:white" name="state_names" size="5">
                 <option value="Telangana" th:field="*{state}">Telangana  </option>
                 <option value="AP" th:field="*{state}"> AP</option>
                 <option value="UP" th:field="*{state}"> UP </option>
@@ -136,7 +138,7 @@
 					            <div class="col-8">
 						       <input type="text" th:field="*{image}" class="form-control" required />
 							
-                               <input type="file" name="newfile">  
+                               <input style="color:white;" type="file" name="newfile">  
                                 </div>
                               </div>
 						
@@ -159,6 +161,7 @@
 					
 
 					<button type="submit" class="btn btn-primary">Register</button>
+					</form>
 					</div>
 </body>
  </html>

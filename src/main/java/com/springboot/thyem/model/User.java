@@ -5,6 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+import com.sun.istack.NotNull;
 
 @Entity
 @Table(name = "user_details")
@@ -12,25 +16,26 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-
+	@NotBlank
+	@Size(min=3,max=20,message="length must be between 3 and 20")
 	private String firstName;
-
+	@NotNull
 	private String lastName;
-
+	@NotNull
 	private String role;
-
+	@NotNull
 	private String gender;
-
+	@NotNull
 	private String email;
-
+	@NotNull
 	private String phone_no;
-
+	@NotNull
 	private String address;
-	
+	@NotNull
 	private String state;
-
+	@NotNull
 	private String dob;
-
+	@NotNull
 	private String languages;
 
 	private byte[] image;
